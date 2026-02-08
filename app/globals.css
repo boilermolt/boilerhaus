@@ -1,14 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,79 +50,203 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --radius: 0.75rem;
+  
+  /* Dark tech-art theme */
+  --background: oklch(0.12 0.01 264);
+  --foreground: oklch(0.98 0.01 264);
+  
+  --card: oklch(0.16 0.02 264);
+  --card-foreground: oklch(0.98 0.01 264);
+  
+  --popover: oklch(0.14 0.02 264);
+  --popover-foreground: oklch(0.98 0.01 264);
+  
+  /* Electric cyan primary */
+  --primary: oklch(0.75 0.18 210);
+  --primary-foreground: oklch(0.12 0.01 264);
+  
+  /* Hot magenta secondary */
+  --secondary: oklch(0.65 0.25 330);
+  --secondary-foreground: oklch(0.98 0.01 264);
+  
+  --muted: oklch(0.22 0.02 264);
+  --muted-foreground: oklch(0.65 0.03 264);
+  
+  /* Lime accent */
+  --accent: oklch(0.82 0.20 130);
+  --accent-foreground: oklch(0.12 0.01 264);
+  
+  --destructive: oklch(0.65 0.25 25);
+  
+  --border: oklch(0.25 0.03 264);
+  --input: oklch(0.22 0.02 264);
+  --ring: oklch(0.75 0.18 210);
+  
+  --chart-1: oklch(0.75 0.18 210);
+  --chart-2: oklch(0.65 0.25 330);
+  --chart-3: oklch(0.82 0.20 130);
+  --chart-4: oklch(0.70 0.22 280);
+  --chart-5: oklch(0.78 0.16 45);
+  
+  --sidebar: oklch(0.14 0.02 264);
+  --sidebar-foreground: oklch(0.98 0.01 264);
+  --sidebar-primary: oklch(0.75 0.18 210);
+  --sidebar-primary-foreground: oklch(0.12 0.01 264);
+  --sidebar-accent: oklch(0.22 0.02 264);
+  --sidebar-accent-foreground: oklch(0.98 0.01 264);
+  --sidebar-border: oklch(0.25 0.03 264);
+  --sidebar-ring: oklch(0.75 0.18 210);
+  
+  /* Custom gradients */
+  --gradient-primary: linear-gradient(135deg, oklch(0.75 0.18 210) 0%, oklch(0.70 0.22 280) 100%);
+  --gradient-secondary: linear-gradient(135deg, oklch(0.65 0.25 330) 0%, oklch(0.70 0.20 350) 100%);
+  --gradient-accent: linear-gradient(135deg, oklch(0.82 0.20 130) 0%, oklch(0.75 0.18 210) 100%);
+  
+  /* Glow effects */
+  --glow-primary: 0 0 20px oklch(0.75 0.18 210 / 0.5), 0 0 40px oklch(0.75 0.18 210 / 0.3);
+  --glow-secondary: 0 0 20px oklch(0.65 0.25 330 / 0.5), 0 0 40px oklch(0.65 0.25 330 / 0.3);
+  --glow-accent: 0 0 20px oklch(0.82 0.20 130 / 0.5), 0 0 40px oklch(0.82 0.20 130 / 0.3);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+  
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  /* Text glow */
+  .text-glow-primary {
+    text-shadow: var(--glow-primary);
+  }
+  
+  .text-glow-secondary {
+    text-shadow: var(--glow-secondary);
+  }
+  
+  .text-glow-accent {
+    text-shadow: var(--glow-accent);
+  }
+  
+  /* Pixel-art grid background */
+  .bg-pixel-grid {
+    background-image: 
+      linear-gradient(oklch(0.25 0.03 264 / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.25 0.03 264 / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Animated gradient background */
+  .bg-gradient-animate {
+    background: linear-gradient(
+      -45deg,
+      oklch(0.12 0.01 264),
+      oklch(0.16 0.02 264),
+      oklch(0.14 0.02 280),
+      oklch(0.16 0.02 250)
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Glitch effect */
+  .glitch {
+    position: relative;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 oklch(0.75 0.18 210);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  }
+  
+  .glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 oklch(0.65 0.25 330);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim-1 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    10% { clip-path: inset(10% 0 85% 0); }
+    20% { clip-path: inset(80% 0 10% 0); }
+    30% { clip-path: inset(50% 0 30% 0); }
+    40% { clip-path: inset(20% 0 60% 0); }
+    50% { clip-path: inset(60% 0 20% 0); }
+  }
+  
+  @keyframes glitch-anim-2 {
+    0%, 100% { clip-path: inset(0 0 0 0); }
+    15% { clip-path: inset(90% 0 5% 0); }
+    30% { clip-path: inset(5% 0 90% 0); }
+    45% { clip-path: inset(40% 0 40% 0); }
+    60% { clip-path: inset(70% 0 15% 0); }
+    75% { clip-path: inset(25% 0 60% 0); }
   }
 }
